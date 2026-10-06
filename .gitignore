@@ -1,0 +1,7 @@
+# Datos comerciales: no subir a GitHub
+datos/crm/*
+!datos/crm/LEEME.md
+salida/*
+!salida/.gitkeep
+__pycache__/
+~$*

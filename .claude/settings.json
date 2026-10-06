@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(python3 scripts/generar_excel.py:*)",
+      "Read(./datos/**)",
+      "Read(./salida/**)",
+      "Write(./salida/**)",
+      "Edit(./salida/**)"
+    ],
+    "deny": [
+      "WebFetch(domain:linkedin.com)",
+      "WebFetch(domain:www.linkedin.com)"
+    ]
+  }
+}
