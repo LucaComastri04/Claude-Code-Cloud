@@ -43,7 +43,7 @@ COLUMNAS = [
     ("Parecido a", "parecido_a", 30),
     ("Desglose puntuación", "desglose", 34),
     ("Notas", "notas", 35),
-    ("Estado", None, 14),
+    ("Estado", None, 26),
 ]
 
 COLOR_PRIORIDAD = {"A": "F8CBAD", "B": "FFE699", "C": "FFF2CC"}
@@ -79,6 +79,9 @@ def main() -> None:
     origen = Path(sys.argv[1])
     prospectos = json.loads(origen.read_text(encoding="utf-8"))
 
+    hay_crm = any(f.name != "LEEME.md" for f in (RAIZ / "datos" / "crm").glob("*"))
+    estado_inicial = "Pendiente" if hay_crm else "Pendiente – comprobar en CRM"
+
     ya_vistas = cargar_historico()
     nuevos, repetidos = [], []
     for p in prospectos:
@@ -101,7 +104,7 @@ def main() -> None:
     for fila, p in enumerate(nuevos, start=2):
         for col, (_, clave, _) in enumerate(COLUMNAS, start=1):
             if clave is None:
-                valor = "Pendiente"
+                valor = estado_inicial
             elif clave == "senales":
                 valor = formatear_senales(p.get(clave))
             else:

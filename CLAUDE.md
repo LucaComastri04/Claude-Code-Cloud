@@ -92,9 +92,12 @@ la fuente, la señal no cuenta.
 | Señal | Peso |
 |---|---|
 | Nuevo CIO, CTO o CISO en los últimos 6 meses | ⭐⭐⭐ |
-| Ofertas de empleo de Citrix, VMware, VDI, Horizon, AVD, Windows 365, cloud o ciberseguridad | ⭐⭐⭐ |
+| Usa **Citrix** u ofertas de empleo de administradores de Citrix / VDI | ⭐⭐⭐ |
+| Usa **VMware** u ofertas de empleo de VMware (alternativa: Nutanix) | ⭐⭐⭐ |
+| Ofertas de empleo de cloud híbrido, backup o ciberseguridad | ⭐⭐ |
 | Incidente de seguridad o ransomware reciente (últimos 12 meses) | ⭐⭐⭐ |
-| Usa VMware (cambios de licencias tras la compra por Broadcom) o Citrix u otra VDI antigua | ⭐⭐ |
+| Proyecto de firma electrónica, alta digital de clientes, onboarding o biometría (banca, seguros, fintech) → Namirial, Wacom, Aware | ⭐⭐ |
+| Usa Veeam o Acronis, o tiene proyectos de backup y recuperación ante desastres | ⭐ |
 | Fusión, adquisición o escisión | ⭐⭐ |
 | Obligaciones DORA (banca/seguros) o NIS2 (energía y sectores críticos), auditoría o sanción reciente | ⭐⭐ |
 | Expansión España ↔ Latinoamérica | ⭐⭐ |
@@ -104,11 +107,14 @@ la fuente, la señal no cuenta.
 | Crecimiento rápido de plantilla, nuevas oficinas, cambio de sede o paso a trabajo híbrido | ⭐ |
 | Centro de datos propio, sistemas heredados o parque sin migrar a Windows 11 | ⭐ |
 
-Las combinaciones más fuertes son **nuevo CIO/CISO + vacantes de Citrix/VMware + incidente de
+Las combinaciones más fuertes son **nuevo CIO/CISO + Citrix o VMware + incidente de
 seguridad**. Si coinciden dos en la misma empresa, márcala como prioridad.
 
-> Nota: antes de usar la tecnología como filtro, confirma en `datos/serban_contexto.md` con qué
-> fabricantes trabaja SerBan. Si ese apartado está vacío, trata la tecnología como señal y no como filtro.
+**Fabricantes de SerBan** (detalle en `datos/serban_contexto.md`): Citrix, Nutanix, Veeam, Acronis,
+Wacom, Namirial y Aware. Relaciona siempre la señal con el fabricante en `servicio_serban`
+(por ejemplo, VMware → migración a Nutanix; Citrix → Workspace as a Service con Citrix).
+La tecnología es una señal que suma puntos, **no un filtro**: una empresa sin tecnología conocida
+puede ser un buen prospecto por otras señales.
 
 ---
 
@@ -173,6 +179,7 @@ sirvieron y cuáles no. Ajusta tus criterios según esas notas.
 1. **Preparar**
    - Lee `datos/clientes_ideales.md`, `datos/serban_contexto.md`, `datos/feedback.md` y `datos/exclusiones.csv`.
    - Carga las empresas que ya existen: todos los archivos de `datos/crm/` (exportación de Dynamics 365) y `salida/historico.csv`.
+   - **Si `datos/crm/` no tiene exportación** (solo `LEEME.md`), sigue igualmente. Avisa en el resumen de que no se ha comprobado el CRM, y el Excel lo indicará en la columna "Estado" ("Pendiente – comprobar en CRM").
    - Objetivo por defecto: **20 prospectos calificados** (mínimo 15), salvo que el usuario indique otro número, sector o país.
 
 2. **Generar candidatos** (unas 2–3 veces más candidatos que el objetivo)
